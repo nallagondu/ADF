@@ -5,13 +5,19 @@
 		"factoryName": {
 			"value": "ProjectprorgADF"
 		},
-		"AzureDataLakeStorage1_accountKey": {
+		"AzureDataLakeStorage2_accountKey": {
 			"value": ""
 		},
 		"AzureSqlDatabase1_connectionString": {
 			"value": ""
 		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
+		"trip_Transactions_accountKey": {
+			"value": ""
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"value": "https://storageadfrg.dfs.core.windows.net/"
+		},
+		"trip_Transactions_properties_typeProperties_url": {
 			"value": "https://storageadfrg.dfs.core.windows.net/"
 		},
 		"containerUri": {

@@ -7,15 +7,23 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ProjectprorgADF"
 		},
-		"AzureDataLakeStorage1_accountKey": {
+		"AzureDataLakeStorage2_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2'"
 		},
 		"AzureSqlDatabase1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
 		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
+		"trip_Transactions_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'trip_Transactions'"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storageadfrg.dfs.core.windows.net/"
+		},
+		"trip_Transactions_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://storageadfrg.dfs.core.windows.net/"
 		},
@@ -46,14 +54,20 @@
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
 					},
-					"AzureDataLakeStorage1_accountKey": {
-						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					"AzureDataLakeStorage2_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
 					},
 					"AzureSqlDatabase1_connectionString": {
 						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
 					},
-					"AzureDataLakeStorage1_properties_typeProperties_url": {
-						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					"trip_Transactions_accountKey": {
+						"value": "[parameters('trip_Transactions_accountKey')]"
+					},
+					"AzureDataLakeStorage2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
+					},
+					"trip_Transactions_properties_typeProperties_url": {
+						"value": "[parameters('trip_Transactions_properties_typeProperties_url')]"
 					}
 				}
 			},

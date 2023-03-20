@@ -7,15 +7,23 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "ProjectprorgADF"
 		},
-		"AzureDataLakeStorage1_accountKey": {
+		"AzureDataLakeStorage2_accountKey": {
 			"type": "secureString",
-			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage2'"
 		},
 		"AzureSqlDatabase1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
 		},
-		"AzureDataLakeStorage1_properties_typeProperties_url": {
+		"trip_Transactions_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'trip_Transactions'"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://storageadfrg.dfs.core.windows.net/"
+		},
+		"trip_Transactions_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://storageadfrg.dfs.core.windows.net/"
 		}
@@ -187,17 +195,17 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorage1')]",
+			"name": "[concat(parameters('factoryName'), '/AzureDataLakeStorage2')]",
 			"type": "Microsoft.DataFactory/factories/linkedServices",
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
 				"type": "AzureBlobFS",
 				"typeProperties": {
-					"url": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]",
+					"url": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]",
 					"accountKey": {
 						"type": "SecureString",
-						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
 					}
 				}
 			},
@@ -235,7 +243,7 @@
 					"sinks": [
 						{
 							"linkedService": {
-								"referenceName": "AzureDataLakeStorage1",
+								"referenceName": "trip_Transactions",
 								"type": "LinkedServiceReference"
 							},
 							"name": "sink1"
@@ -279,6 +287,7 @@
 						"     validateSchema: false,",
 						"     format: 'delta',",
 						"     fileSystem: 'deltalake',",
+						"     folderPath: 'Bronze/Trip_Transactions',",
 						"     mergeSchema: false,",
 						"     autoCompact: false,",
 						"     optimizedWrite: false,",
@@ -298,8 +307,25 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/AzureSqlTable1')]",
-				"[concat(variables('factoryId'), '/linkedServices/AzureDataLakeStorage1')]"
+				"[concat(variables('factoryId'), '/linkedServices/trip_Transactions')]"
 			]
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/trip_Transactions')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('trip_Transactions_properties_typeProperties_url')]",
+					"accountKey": {
+						"type": "SecureString",
+						"value": "[parameters('trip_Transactions_accountKey')]"
+					}
+				}
+			},
+			"dependsOn": []
 		}
 	]
 }
