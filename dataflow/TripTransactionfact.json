@@ -1,5 +1,5 @@
 {
-	"name": "dataflow1",
+	"name": "TripTransactionfact",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -12,8 +12,16 @@
 					"name": "source1"
 				}
 			],
-			"sinks": [],
-			"transformations": [],
+			"sinks": [
+				{
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "filter1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          trip_id as integer,",
@@ -41,7 +49,12 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
-				"     format: 'table') ~> source1"
+				"     format: 'table') ~> source1",
+				"source1 filter(toDate(trip_start_timestamp)>=currentDate()) ~> filter1",
+				"filter1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}
