@@ -15,7 +15,7 @@
 			"sinks": [
 				{
 					"linkedService": {
-						"referenceName": "AzureDataLakeStorage1",
+						"referenceName": "trip_Transactions",
 						"type": "LinkedServiceReference"
 					},
 					"name": "sink1"
@@ -58,7 +58,6 @@
 				"filter1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     format: 'delta',",
-				"     fileSystem: 'deltalake',",
 				"     mergeSchema: false,",
 				"     autoCompact: false,",
 				"     optimizedWrite: false,",
@@ -72,7 +71,8 @@
 				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     saveOrder: 1) ~> sink1"
+				"     saveOrder: 1,",
+				"     fileSystem: 'deltalake') ~> sink1"
 			]
 		}
 	}
