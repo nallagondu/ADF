@@ -67,7 +67,7 @@
 				"     deletable:false,",
 				"     insertable:true,",
 				"     updateable:false,",
-				"     upsertable:true,",
+				"     upsertable:false,",
 				"     umask: 0022,",
 				"     preCommands: [],",
 				"     postCommands: [],",
