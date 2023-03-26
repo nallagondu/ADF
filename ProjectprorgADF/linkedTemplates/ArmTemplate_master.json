@@ -15,6 +15,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage3'"
 		},
+		"AzureDatabricks1_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
+		},
 		"AzureSqlDatabase1_connectionString": {
 			"type": "secureString",
 			"metadata": "Secure string for 'connectionString' of 'AzureSqlDatabase1'"
@@ -22,10 +26,6 @@
 		"trip_Transactions_accountKey": {
 			"type": "secureString",
 			"metadata": "Secure string for 'accountKey' of 'trip_Transactions'"
-		},
-		"AzureDatabricks1_accessToken": {
-			"type": "secureString",
-			"metadata": "Secure string for 'accessToken' of 'AzureDatabricks1'"
 		},
 		"AzureDataLakeStorage2_properties_typeProperties_url": {
 			"type": "string",
@@ -72,14 +72,14 @@
 					"AzureDataLakeStorage3_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage3_accountKey')]"
 					},
+					"AzureDatabricks1_accessToken": {
+						"value": "[parameters('AzureDatabricks1_accessToken')]"
+					},
 					"AzureSqlDatabase1_connectionString": {
 						"value": "[parameters('AzureSqlDatabase1_connectionString')]"
 					},
 					"trip_Transactions_accountKey": {
 						"value": "[parameters('trip_Transactions_accountKey')]"
-					},
-					"AzureDatabricks1_accessToken": {
-						"value": "[parameters('AzureDatabricks1_accessToken')]"
 					},
 					"AzureDataLakeStorage2_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"

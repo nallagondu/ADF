@@ -11,13 +11,13 @@
 		"AzureDataLakeStorage3_accountKey": {
 			"value": ""
 		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
 		"AzureSqlDatabase1_connectionString": {
 			"value": ""
 		},
 		"trip_Transactions_accountKey": {
-			"value": ""
-		},
-		"AzureDatabricks1_accessToken": {
 			"value": ""
 		},
 		"AzureDataLakeStorage2_properties_typeProperties_url": {
