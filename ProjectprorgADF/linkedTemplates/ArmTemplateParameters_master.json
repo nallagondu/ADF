@@ -17,6 +17,9 @@
 		"trip_Transactions_accountKey": {
 			"value": ""
 		},
+		"AzureDatabricks1_accessToken": {
+			"value": ""
+		},
 		"AzureDataLakeStorage2_properties_typeProperties_url": {
 			"value": "https://storageadfrg.dfs.core.windows.net/"
 		},
