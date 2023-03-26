@@ -45,7 +45,7 @@
 					"url": "https://logicapprgadf.azurewebsites.net:443/api/email_Trigger_logic_app/triggers/When_a_HTTP_request_is_received/invoke?api-version=2022-05-01&sp=%2Ftriggers%2FWhen_a_HTTP_request_is_received%2Frun&sv=1.0&sig=A4xfadvOiFSRiGEEdzNKrLvf_5bHZgLGcvnDOomRx2Y",
 					"method": "POST",
 					"body": {
-						"value": "{\n    \"pipeline\":\"@{pipeline().Pipeline}\",\n    \"Success/Failure\":\"Sucess\",\n    \"DatafactoryName\":\"@{pipeline().DataFactory}\",\n    \"PipelinerunId\":\"@{pipeline().RunId}\",\n    \"Time\":\"@{pipeline().TriggerTime}\"\n}",
+						"value": "{\n    \"pipeline\":\"@{pipeline().Pipeline}\",\n    \"Success/Failure\":\"Sucess\",\n    \"DatafactoryName\":\"@{pipeline().DataFactory}\",\n    \"PipelinerunId\":\"@{pipeline().RunId}\",\n    \"Time\":\"@{pipeline().TriggerTime}\"\n    \"Message\":\"Pipeline has run successfully.\"\n}",
 						"type": "Expression"
 					}
 				}
@@ -93,7 +93,7 @@
 					"url": "https://logicapprgadf.azurewebsites.net:443/api/email_Trigger_logic_app/triggers/When_a_HTTP_request_is_received/invoke?api-version=2022-05-01&sp=%2Ftriggers%2FWhen_a_HTTP_request_is_received%2Frun&sv=1.0&sig=A4xfadvOiFSRiGEEdzNKrLvf_5bHZgLGcvnDOomRx2Y",
 					"method": "POST",
 					"body": {
-						"value": "{\n    \"pipeline\":\"@{pipeline().Pipeline}\",\n    \"Success/Failure\":\"Sucess\",\n    \"DatafactoryName\":\"@{pipeline().DataFactory}\",\n    \"PipelinerunId\":\"@{pipeline().RunId}\",\n    \"Time\":\"@{pipeline().TriggerTime}\"\n    \"Error Message\":variables('Error_Message')\n}",
+						"value": "{\n    \"pipeline\":\"@{pipeline().Pipeline}\",\n    \"Success/Failure\":\"Sucess\",\n    \"DatafactoryName\":\"@{pipeline().DataFactory}\",\n    \"PipelinerunId\":\"@{pipeline().RunId}\",\n    \"Time\":\"@{pipeline().TriggerTime}\"\n    \"Message\":variables('Error_Message')\n}",
 						"type": "Expression"
 					}
 				}
