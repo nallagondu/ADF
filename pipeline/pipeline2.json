@@ -16,7 +16,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataflow": {
-						"referenceName": "dataflow1",
+						"referenceName": "Reward_Points_Fact",
 						"type": "DataFlowReference"
 					},
 					"compute": {
