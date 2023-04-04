@@ -237,7 +237,7 @@
 							"method": "POST",
 							"headers": {},
 							"body": {
-								"value": "{\n\"pipeline\":\"@{pipeline().Pipeline}\",\n    \"Success/Failure\":\"Success\",\n    \"DatafactoryName\":\"@{pipeline().DataFactory}\",\n    \"PipelinerunId\":\"@{pipeline().RunId}\",\n    \"Time\":\"@{pipeline().TriggerTime}\",\n    \"Message\":\"variables('Error_Message')\"\n    }",
+								"value": "{\n\"pipeline\":\"@{pipeline().Pipeline}\",\n    \"Success/Failure\":\"Failure\",\n    \"DatafactoryName\":\"@{pipeline().DataFactory}\",\n    \"PipelinerunId\":\"@{pipeline().RunId}\",\n    \"Time\":\"@{pipeline().TriggerTime}\",\n    \"Message\":\"variables('Error_Message')\"\n    }",
 								"type": "Expression"
 							}
 						}
